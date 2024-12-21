@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://ee1tj64tmnag"]
+
+[ext_resource type="Theme" uid="uid://c82hckfvt0rn" path="res://buttons_theme.tres" id="1_sgbsu"]
+[ext_resource type="Script" path="res://keypad.gd" id="2_1kf3q"]
+
+[node name="Keypad" type="GridContainer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.383
+offset_right = -1044.0
+offset_bottom = -824.184
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_sgbsu")
+columns = 3
+script = ExtResource("2_1kf3q")
+
+[node name="Blank" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="BtnUp" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "^"
+
+[node name="BtnA" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "A
+"
+
+[node name="BtnLeft" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "<"
+
+[node name="BtnDown" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "v"
+
+[node name="BtnRight" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = ">"
+
+[connection signal="pressed" from="BtnUp" to="." method="_on_btn_up_pressed"]
+[connection signal="pressed" from="BtnA" to="." method="_on_btn_a_pressed"]
+[connection signal="pressed" from="BtnLeft" to="." method="_on_btn_left_pressed"]
+[connection signal="pressed" from="BtnDown" to="." method="_on_btn_down_pressed"]
+[connection signal="pressed" from="BtnRight" to="." method="_on_btn_right_pressed"]
