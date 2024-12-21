@@ -6,5 +6,5 @@ extends Control
 # A: <v<A >A >^AAA vA <^A >A
 
 func _on_numpad_button_pressed(val):
-	var output = $Output as TextEdit
+	var output = find_child("Output") as TextEdit
 	output.text = output.text + val

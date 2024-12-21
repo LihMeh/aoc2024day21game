@@ -11,58 +11,93 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_gahdi")
 
-[node name="Numpad" parent="." instance=ExtResource("1_db84o")]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 66.0
-offset_top = 107.0
-offset_right = -978.0
-offset_bottom = -645.184
-grow_horizontal = 1
-grow_vertical = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Output" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 35.0
-offset_right = 622.0
-offset_bottom = 87.0
-scale = Vector2(1.00185, 1.012)
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Keypad" parent="." instance=ExtResource("3_t1y8p")]
-layout_mode = 1
-offset_left = 214.0
-offset_top = 111.0
-offset_right = -830.0
-offset_bottom = -713.184
-grow_horizontal = 1
-grow_vertical = 1
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Keypad2" parent="." instance=ExtResource("3_t1y8p")]
-layout_mode = 1
-offset_left = 352.0
-offset_top = 110.0
-offset_right = -692.0
-offset_bottom = -714.184
-grow_horizontal = 1
-grow_vertical = 1
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Keypad3" parent="." instance=ExtResource("3_t1y8p")]
-layout_mode = 1
-offset_left = 495.0
-offset_top = 111.0
-offset_right = -549.0
-offset_bottom = -713.184
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Output" type="TextEdit" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+editable = false
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Numpad" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_db84o")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Keypad" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_t1y8p")]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Keypad2" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_t1y8p")]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Keypad3" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_t1y8p")]
+layout_mode = 2
+size_flags_vertical = 1
 is_need_activation = false
 
-[connection signal="on_button_pressed" from="Numpad" to="." method="_on_numpad_button_pressed"]
-[connection signal="confirm" from="Keypad" to="Numpad" method="confirm"]
-[connection signal="move" from="Keypad" to="Numpad" method="move"]
-[connection signal="confirm" from="Keypad2" to="Keypad" method="on_confirm"]
-[connection signal="move" from="Keypad2" to="Keypad" method="on_move"]
-[connection signal="confirm" from="Keypad3" to="Keypad2" method="on_confirm"]
-[connection signal="move" from="Keypad3" to="Keypad2" method="on_move"]
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="on_button_pressed" from="VBoxContainer/HBoxContainer/Numpad" to="." method="_on_numpad_button_pressed"]
+[connection signal="confirm" from="VBoxContainer/HBoxContainer/Keypad" to="VBoxContainer/HBoxContainer/Numpad" method="confirm"]
+[connection signal="move" from="VBoxContainer/HBoxContainer/Keypad" to="VBoxContainer/HBoxContainer/Numpad" method="move"]
+[connection signal="confirm" from="VBoxContainer/HBoxContainer/Keypad2" to="VBoxContainer/HBoxContainer/Keypad" method="on_confirm"]
+[connection signal="move" from="VBoxContainer/HBoxContainer/Keypad2" to="VBoxContainer/HBoxContainer/Keypad" method="on_move"]
+[connection signal="confirm" from="VBoxContainer/HBoxContainer/Keypad3" to="VBoxContainer/HBoxContainer/Keypad2" method="on_confirm"]
+[connection signal="move" from="VBoxContainer/HBoxContainer/Keypad3" to="VBoxContainer/HBoxContainer/Keypad2" method="on_move"]

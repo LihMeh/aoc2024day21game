@@ -7,8 +7,9 @@
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.383
-offset_right = -1044.0
-offset_bottom = -824.184
+offset_top = -3.0
+offset_right = -1038.0
+offset_bottom = -757.184
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -16,6 +17,24 @@ size_flags_vertical = 3
 theme = ExtResource("1_sgbsu")
 columns = 3
 script = ExtResource("2_1kf3q")
+
+[node name="Blank5" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="Blank6" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="Blank7" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
 
 [node name="Blank" type="Button" parent="."]
 layout_mode = 2
@@ -53,6 +72,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = ">"
+
+[node name="Blank2" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="Blank3" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="Blank4" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
 
 [connection signal="pressed" from="BtnUp" to="." method="_on_btn_up_pressed"]
 [connection signal="pressed" from="BtnA" to="." method="_on_btn_a_pressed"]
